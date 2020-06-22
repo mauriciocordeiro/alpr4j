@@ -1,37 +1,34 @@
 package br.org.mcord.alpr4j.controller;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import br.org.mcord.alpr4j.model.AuthData;
-import br.org.mcord.alpr4j.model.User;
-import br.org.mcord.alpr4j.service.UserService;
+import br.org.mcord.alpr4j.service.AlprService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 
+@Api(tags = {"ALPR"})
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/v1/alpr")
 public class AlprController {
 	
 	@Autowired
-	UserService userService;
-		
-	@ApiOperation(value = "Authenticate")
-	@ApiResponses(value = {
-			@ApiResponse(code = 200, message = "OK."),
-			@ApiResponse(code = 400, message = "Bad request"),
-			@ApiResponse(code = 401, message = "Not authenticated"),
-			@ApiResponse(code = 500, message = "Internal server error")
-	})
-	@PostMapping("/login")
-	public ResponseEntity<User> login(@ApiParam(value = "auth data") @RequestBody AuthData data) {
-		return ResponseEntity.ok(userService.auth(data));
+	AlprService alprService;
+	
+	@ApiOperation(value = "Recognize plate")
+	@PostMapping("")
+	public ResponseEntity<?> recognize(
+			@RequestParam("country") String country,
+			@RequestParam("image") MultipartFile image) throws IOException, InterruptedException {
+				
+		return ResponseEntity.ok(alprService.recognize(image.getBytes(), image.getOriginalFilename()));
 	}
 
 }

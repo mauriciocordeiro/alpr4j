@@ -12,4 +12,4 @@ CREATE TABLE users (
 );
 
 INSERT INTO users(name, username, password, role)
-	VALUES ("Admin", "admin" "admin", "ADMIN");
+	VALUES ('Admin', 'admin', 'admin', 'ADMIN');
