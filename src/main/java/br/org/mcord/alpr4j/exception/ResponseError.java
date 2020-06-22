@@ -1,4 +1,4 @@
-package br.org.mcord.famec.exception;
+package br.org.mcord.alpr4j.exception;
 
 import java.time.LocalDateTime;
 

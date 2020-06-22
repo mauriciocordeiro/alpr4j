@@ -51,7 +51,7 @@ public class SwaggerConfig {
 	            .description("API for OpenALPR service")
 	            .version("v1")
 	            .license("MIT")
-	            .licenseUrl("https://www.gnu.org/licenses/gpl-3.0.en.html")
+	            .licenseUrl("https://mit-license.org/")
 	            .contact(new Contact("Maurício Cordeiro", "https://github.com/mauriciocordeiro/alpr4j", "mauriciocordeiro@live.com"))
 	            .build();
     }
