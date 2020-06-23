@@ -1,5 +1,8 @@
 # alpr4j
- API para o [OpenALPR](https://github.com/openalpr/openalpr).
+
+[![Build Status](https://travis-ci.org/mauriciocordeiro/alpr4j.svg?branch=master)](https://travis-ci.org/mauriciocordeiro/alpr4j)
+
+API para o [OpenALPR](https://github.com/openalpr/openalpr).
 
 ## Configurações
 
