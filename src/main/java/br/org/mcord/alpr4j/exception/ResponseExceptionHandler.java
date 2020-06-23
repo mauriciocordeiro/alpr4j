@@ -79,5 +79,17 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 		ResponseError err = new ResponseError(LocalDateTime.now(), 500, HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());		
 		return new ResponseEntity<ResponseError>(err, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	@ExceptionHandler(InterruptedException.class)
+	public ResponseEntity<ResponseError> handleInterruptedError(Exception exception, WebRequest request) throws IOException {
+		ResponseError err = new ResponseError(LocalDateTime.now(), 500, HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());		
+		return new ResponseEntity<ResponseError>(err, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(IOException.class)
+	public ResponseEntity<ResponseError> handleIOError(Exception exception, WebRequest request) throws IOException {
+		ResponseError err = new ResponseError(LocalDateTime.now(), 500, HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());		
+		return new ResponseEntity<ResponseError>(err, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import br.org.mcord.alpr4j.model.AlprResult;
 import br.org.mcord.alpr4j.service.AlprService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,11 +25,12 @@ public class AlprController {
 	
 	@ApiOperation(value = "Recognize plate")
 	@PostMapping("")
-	public ResponseEntity<?> recognize(
-			@RequestParam("country") String country,
-			@RequestParam("image") MultipartFile image) throws IOException, InterruptedException {
-				
-		return ResponseEntity.ok(alprService.recognize(image.getBytes(), image.getOriginalFilename()));
+	public ResponseEntity<AlprResult> recognize(@RequestParam("image") MultipartFile image) throws IOException, InterruptedException {
+		
+		byte[] bytes = image.getBytes();
+		String filename = System.currentTimeMillis()+image.getOriginalFilename();
+		
+		return ResponseEntity.ok(alprService.recognize(bytes, filename));
 	}
 
 }
