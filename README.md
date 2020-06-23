@@ -1,6 +1,10 @@
 # alpr4j
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/mauriciocordeiro/alpr4j)
 [![Build Status](https://travis-ci.org/mauriciocordeiro/alpr4j.svg?branch=master)](https://travis-ci.org/mauriciocordeiro/alpr4j)
+[![GitHub issues](https://img.shields.io/github/issues/mauriciocordeiro/alpr4j)](https://github.com/mauriciocordeiro/alpr4j/issues)
+[![GitHub license](https://img.shields.io/github/license/mauriciocordeiro/alpr4j)](https://github.com/mauriciocordeiro/alpr4j/blob/master/LICENSE)
+
 
 API para o [OpenALPR](https://github.com/openalpr/openalpr).
 
