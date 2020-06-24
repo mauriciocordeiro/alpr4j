@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.org.mcord</groupId>
 	<artifactId>alpr4j</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>alpr4j</name>
 	<description>API for OpenALPR service</description>
 
