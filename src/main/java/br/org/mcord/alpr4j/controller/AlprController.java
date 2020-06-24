@@ -17,14 +17,14 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(tags = {"ALPR"})
 @RestController
-@RequestMapping("/v1/alpr")
+@RequestMapping("/v1")
 public class AlprController {
 	
 	@Autowired
 	AlprService alprService;
 	
-	@ApiOperation(value = "Recognize plate")
-	@PostMapping("")
+	@ApiOperation(value = "Find a plate")
+	@PostMapping("/find")
 	public ResponseEntity<AlprResult> recognize(@RequestParam("image") MultipartFile image) throws IOException, InterruptedException {
 		
 		byte[] bytes = image.getBytes();

@@ -1,3 +1,0 @@
-2020-06-22 18:19:34 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS(NAME, USERNAME, PASSWORD, ROLE) VALUES (""Admin"", ""admin"" ""admin""[*], ""ADMIN"")"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
-INSERT INTO users(name, username, password, role) VALUES ("Admin", "admin" "admin", "ADMIN") [42001-200]

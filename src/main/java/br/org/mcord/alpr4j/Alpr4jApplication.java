@@ -42,7 +42,7 @@ public class Alpr4jApplication {
 			http.cors().and().csrf().disable()
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
-				.antMatchers(HttpMethod.POST, "/v1/login", "/v1/alpr").permitAll()
+				.antMatchers(HttpMethod.POST, "/v1/login", "/v1/find").permitAll()
 				.anyRequest().authenticated();
 
 		}
