@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -21,7 +22,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import br.org.mcord.alpr4j.config.JWTAuthorizationFilter;
 
 @SpringBootApplication
-public class Alpr4jApplication {
+public class Alpr4jApplication extends SpringBootServletInitializer {
 
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Alpr4jApplication.class);
