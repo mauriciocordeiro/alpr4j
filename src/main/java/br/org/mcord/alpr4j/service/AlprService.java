@@ -33,6 +33,8 @@ public class AlprService {
 	
 	public AlprResult recognize(byte[] file, String filename) throws IOException, InterruptedException {
 		
+		filename = "/alpr4j/"+filename;
+		
 		AlprResult result = new AlprResult();
 		
 		Path path = save(file, filename);
