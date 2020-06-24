@@ -14,9 +14,7 @@ API para o [OpenALPR](https://github.com/openalpr/openalpr).
 
 2. Copie o diretório [`runtime_data/`](https://github.com/openalpr/openalpr/tree/master/runtime_data) para o diretório local equivalente.
 
-3. Implante a API. _(Veja como [aqui](https://spring.io/blog/2014/03/07/deploying-spring-boot-applications))_.
-
-4. Configure os parâmetros em _application.properties_
+3. Configure os parâmetros em _application.properties_
 
 ```
 # OpenALPR
@@ -37,7 +35,18 @@ br.org.mcord.alpr4j.topN=3
 br.org.mcord.alpr4j.onlyPatternMatches=true
 
 ## sinaliza o uso do OpenALPR via WSL (Windows Subsystem for Linux) no Win10
-br.org.mcord.alpr4j.wsl=true 
+br.org.mcord.alpr4j.wsl=false 
+```
+
+4. Implante a API.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este é um projeto Maven, compilado para o formato `.war` e  com _deploy_ feito no Tomcat8.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Linux, crie o diretório `/alpr4j` de propriedade do usuário `tomcat8`. É neste diretório que o banco de dados da API será criado, e onde as imagens das lacas serão temporariamente armazenadas enquanto são analizadas.
+
+```shell
+$ sudo mkdir /alpr4j
+$ sudo chown -R tomcat8:tomcat8 /alpr4j
 ```
 
 Se desejar, compile e treine o OpenALPR.
