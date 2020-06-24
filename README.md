@@ -42,7 +42,7 @@ br.org.mcord.alpr4j.wsl=false
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este é um projeto Maven, compilado para o formato `.war` e  com _deploy_ feito no Tomcat8.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Linux, crie o diretório `/alpr4j` de propriedade do usuário `tomcat8`. É neste diretório que o banco de dados da API será criado, e onde as imagens das lacas serão temporariamente armazenadas enquanto são analizadas.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Linux, crie o diretório `/alpr4j` de propriedade do usuário `tomcat8`. É neste diretório que o banco de dados da API será criado, e onde as imagens das placas serão temporariamente armazenadas enquanto são analizadas.
 
 ```shell
 $ sudo mkdir /alpr4j
