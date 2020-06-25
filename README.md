@@ -66,7 +66,7 @@ Caso queira treinar o OpenALPR, siga as instruções fornecidas [aqui](http://do
 Uma vez configurado, basta enviar uma requisição como se segue:
 
 ```HTTP
-POST /v1/alpr HTTP/1.1
+POST /v1/find HTTP/1.1
 Host: <endereço_do_host>
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
