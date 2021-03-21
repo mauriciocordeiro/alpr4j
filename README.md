@@ -101,3 +101,13 @@ Se nenhuma placa for reconhecida, `results` estará vazio (`{ "results": [] }`).
 ### Segurança
 
 JWT Bearer Token
+
+## Docker
+
+Para executar o **alpr4j** utilizando o conteúdo padrão (do _branch_ `master`), basta montar o contêiner Docker, como segue:
+
+1. Verifique se os arquivos _Dockerfile_ e _docker-compose.yml_ estão presentes na raíz do projeto;
+
+2. Execute o comando `docker-compose up -d --build`;
+
+3. Acesse [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) para consultar a documentação da API.
