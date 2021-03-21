@@ -30,31 +30,30 @@ public class AlprService {
 	private boolean onlyPatternMatches;
 	@Value("${br.org.mcord.alpr4j.wsl}")
 	private boolean wsl;
+	@Value("${br.org.mcord.alpr4j.workdir}")
+	private String workdir;
 	
 	public AlprResult recognize(byte[] file, String filename) throws IOException, InterruptedException {
 		
-		filename = "/alpr4j/"+filename;
+		String filepath = this.workdir+filename;
 		
 		AlprResult result = new AlprResult();
 		
-		Path path = save(file, filename);
+		Path path = save(file, filepath);
 		
 		if(this.useDefault) {
-			result = new AlprResult(runAlpr(filename));
+			result = new AlprResult(runAlpr(filepath));
 		} else {
 			result = merge(this.onlyPatternMatches, 
-					new AlprResult(runAlpr("br", "br", 5, filename)),
-					new AlprResult(runAlpr("br", "mercosul", 5, filename)),
+					new AlprResult(runAlpr("br", "br", 5, filepath)),
+					new AlprResult(runAlpr("br", "mercosul", 5, filepath)),
 					
-					new AlprResult(runAlpr("br2", "br", 5, filename)),
-					new AlprResult(runAlpr("br2", "mercosul", 5, filename)),
-					
-					new AlprResult(runAlpr("br3", "br", 5, filename)),
-					new AlprResult(runAlpr("br3", "mercosul", 5, filename)));
+					new AlprResult(runAlpr("br2", "br", 5, filepath)),
+					new AlprResult(runAlpr("br2", "mercosul", 5, filepath)));
 		}
 		
 		delete(path);
-		
+				
 		return result;
 	}
 	
